@@ -23,7 +23,6 @@ const onCreateBrew = (event) => {
 }
 
 const onGetBrews = () => {
-  console.log('all brews', onGetBrews)
   api.getBrews()
     .then(ui.getBrewsSuccess)
     .catch(ui.failure)
@@ -39,7 +38,6 @@ const onGetBrew = (event) => {
 }
 
 const onDeleteBrew = (event) => {
-  console.log('delete brew triggered', onDeleteBrew)
   event.preventDefault()
   const formData = getFormFields(event.target)
 

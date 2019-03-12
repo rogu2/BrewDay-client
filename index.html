@@ -15,32 +15,32 @@
 
 <body>
   <h1>It's BrewDay!</h1>
+  <section>
+    <p id="user-feedback"></p>
+    <form id="sign-up-form">
+      <p>Sign Up</p>
+      <input name="credentials[email]" type="text" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+      <input type="submit">
+    </form>
 
-  <p id="user-feedback"></p>
-  <form id="sign-up-form">
-    <p>Sign Up</p>
-    <input name="credentials[email]" type="text" placeholder="email">
-    <input name="credentials[password]" type="password" placeholder="password">
-    <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-    <input type="submit">
-  </form>
+    <form id="sign-in-form">
+      <p>Sign In</p>
+      <input name="credentials[email]" type="text" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input type="submit">
+    </form>
 
-  <form id="sign-in-form">
-    <p>Sign In</p>
-    <input name="credentials[email]" type="text" placeholder="email">
-    <input name="credentials[password]" type="password" placeholder="password">
-    <input type="submit">
-  </form>
+    <form id="change-password-form">
+      <p>Change Password</p>
+      <input name="passwords[old]" type="password" placeholder="old password">
+      <input name="passwords[new]" type="password" placeholder="new password">
+      <input type="submit">
+    </form>
 
-  <form id="change-password-form">
-    <p>Change Password</p>
-    <input name="passwords[old]" type="password" placeholder="old password">
-    <input name="passwords[new]" type="password" placeholder="new password">
-    <input type="submit">
-  </form>
-
-  <button id="sign-out-button">Sign Out</button>
-
+    <button id="sign-out-button">Sign Out</button>
+  </section>
   <section id="brew-forms">
     <form id="create-brew-form">
       <p>New Brew</p>
@@ -53,7 +53,7 @@
 
     <form id="update-brew-form">
       <p>Change Brew</p>
-      <!-- <input name="brew[id]" type="text" placeholder="brew id"> -->
+      <input name="brew[brew_id]" type="text" placeholder="brew id">
       <input name="brew[name]" type="text" placeholder="brew name">
       <input name="brew[recipe]" type="text" placeholder="recipe">
       <input name="brew[steps]" type="text" placeholder="steps">
@@ -63,20 +63,17 @@
 
     <form id="delete-brew-form">
       <p>Delete Brew</p>
-      <input name="brew[id]" type="text" placeholder="brew id">
+      <input name="brew[brew_id]" type="text" placeholder="brew id">
       <input type="submit">
     </form>
 
     <form id="get-brew-form">
       <p>Show a Brew</p>
-      <input name="brew[id]" type="text" placeholder="brew id">
+      <input name="brew[brew_id]" type="text" placeholder="brew id">
       <input type="submit">
     </form>
 
     <button id="get-brews-button">Show all brews</button>
   </section>
-
-
 </body>
-
 </html>

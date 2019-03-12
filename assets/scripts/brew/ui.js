@@ -5,11 +5,9 @@ const config = require('../config.js')
 
 const createBrewSuccess = () => {
   $('#user-feedback').text('New brew has been created')
-  console.log('new brew created', createBrewSuccess)
 }
 
 const getBrewsSuccess = () => {
-  console.log('all brews', getBrewsSuccess)
   $('#user-feedback').text('Displaying all brews')
 }
 
