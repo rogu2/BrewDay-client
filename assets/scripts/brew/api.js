@@ -4,7 +4,6 @@ const config = require('../config.js')
 
 // if user is logged in, hide login/signup, show signout and change password
 
-// Try using formdata?
 const createBrew = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/brews',
@@ -14,7 +13,7 @@ const createBrew = (formData) => {
   })
 }
 
-const getBrews = () => {
+const getBrews = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/brews',
     method: 'GET',
@@ -22,30 +21,28 @@ const getBrews = () => {
   })
 }
 
-const getBrew = (brewId) => {
+const getBrew = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/brews/',
+    url: config.apiUrl + '/brews/' + formData.brew.brew_id,
     method: 'GET',
     headers: { Authorization: 'Token token=' + store.user.token }
   })
 }
 
-const deleteBrew = (brewId) => {
+const deleteBrew = (formData) => {
+  console.log('deletebrew', formData)
   return $.ajax({
-    url: config.apiUrl + '/brews',
+    url: config.apiUrl + '/brews/' + formData.brew.brew_id,
     method: 'DELETE',
     headers: { Authorization: 'Token token=' + store.user.token }
   })
 }
 
-// Try using formdata?
 const updateBrew = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/brews',
+    url: config.apiUrl + '/brews/' + formData.brew.brew_id,
     method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
+    headers: { Authorization: 'Token token=' + store.user.token },
     data: formData
   })
 }

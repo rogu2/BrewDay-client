@@ -15,8 +15,7 @@ const addHandlers = () => {
 
 const onCreateBrew = (event) => {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
 
   api.createBrew(formData)
     .then(ui.createBrewSuccess)
@@ -24,11 +23,7 @@ const onCreateBrew = (event) => {
 }
 
 const onGetBrews = () => {
-  // console.log('showing brews', onGetBrews)
-  // event.preventDefault()
-  // const form = event.target
-  // const formData = getFormFields(form)
-
+  console.log('all brews', onGetBrews)
   api.getBrews()
     .then(ui.getBrewsSuccess)
     .catch(ui.failure)
@@ -36,8 +31,7 @@ const onGetBrews = () => {
 
 const onGetBrew = (event) => {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
 
   api.getBrew(formData)
     .then(ui.getBrewSuccess)
@@ -45,9 +39,9 @@ const onGetBrew = (event) => {
 }
 
 const onDeleteBrew = (event) => {
+  console.log('delete brew triggered', onDeleteBrew)
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
 
   api.deleteBrew(formData)
     .then(ui.deleteBrewSuccess)
@@ -56,8 +50,7 @@ const onDeleteBrew = (event) => {
 
 const onUpdateBrew = (event) => {
   event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
 
   api.updateBrew(formData)
     .then(ui.updateBrewSuccess)

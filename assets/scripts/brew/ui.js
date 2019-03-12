@@ -9,6 +9,7 @@ const createBrewSuccess = () => {
 }
 
 const getBrewsSuccess = () => {
+  console.log('all brews', getBrewsSuccess)
   $('#user-feedback').text('Displaying all brews')
 }
 
