@@ -40,6 +40,43 @@
   </form>
 
   <button id="sign-out-button">Sign Out</button>
+
+  <section id="brew-forms">
+    <form id="create-brew-form">
+      <p>New Brew</p>
+      <input name="brew[name]" type="text" placeholder="brew name">
+      <input name="brew[recipe]" type="text" placeholder="recipe">
+      <input name="brew[steps]" type="text" placeholder="steps">
+      <input name="brew[notes]" type="text" placeholder="notes">
+      <input type="submit">
+    </form>
+
+    <form id="update-brew-form">
+      <p>Change Brew</p>
+      <input name="brew[id]" type="text" placeholder="brew id">
+      <input name="brew[name]" type="text" placeholder="brew name">
+      <input name="brew[recipe]" type="text" placeholder="recipe">
+      <input name="brew[steps]" type="text" placeholder="steps">
+      <input name="brew[notes]" type="text" placeholder="notes">
+      <input type="submit">
+    </form>
+
+    <form id="delete-brew-form">
+      <p>Delete Brew</p>
+      <input name="brew[id]" type="text" placeholder="brew id">
+      <input type="submit">
+    </form>
+
+    <form id="get-brew-form">
+      <p>Show a Brew</p>
+      <input name="brew[id]" type="text" placeholder="brew id">
+      <input type="submit">
+    </form>
+
+    <button id="get-brews-button">Show all brews</button>
+  </section>
+
+
 </body>
 
 </html>
