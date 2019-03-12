@@ -3,17 +3,17 @@
 const store = require('../store.js')
 
 const signUpSuccess = () => {
-  $('#user-feedback').text('Brewer successfully created, please sign in to play')
+  $('#user-feedback').text('Brewer successfully created, please sign in to proceed')
   $('form').trigger('reset')
 }
 
 const signInSuccess = (responseData) => {
-  $('#user-feedback').text('Successfully signed in. Welcome back!')
+  $('#user-feedback').text('Successfully signed in. Time to brew!')
   $('form').trigger('reset')
   store.user = responseData.user
   $('#change-password-form').show()
   $('#sign-out-button').show()
-  $('#restart-button').show()
+  $('#brew-forms').show()
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
 }
@@ -26,7 +26,6 @@ const signOutSuccess = () => {
   $('#sign-out-button').hide()
   $('#sign-in-form').show()
   $('#sign-up-form').show()
-  $('#restart-button').hide()
 }
 
 const changePasswordSuccess = () => {

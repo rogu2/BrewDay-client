@@ -1,6 +1,6 @@
 # VARIABLE=VALUE sh curl-scripts/auth/sign-in.sh
 
-curl "https://brew-day.herokuapp.com/sign-in" \
+curl "http://localhost:4741/sign-in" \
   --include \
   --request POST \
   --header "Content-type: application/json" \

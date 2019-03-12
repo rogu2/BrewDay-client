@@ -13,10 +13,7 @@ const addHandlers = () => {
 
 const onSignUp = (event) => {
   event.preventDefault()
-
-  const form = event.target
-
-  const formData = getFormFields(form)
+  const formData = getFormFields(event.target)
 
   api.signUp(formData)
     .then(ui.signUpSuccess)
