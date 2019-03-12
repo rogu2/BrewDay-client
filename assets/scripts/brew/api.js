@@ -24,7 +24,7 @@ const getBrews = () => {
 
 const getBrew = (brewId) => {
   return $.ajax({
-    url: config.apiUrl + '/brews/' + brewId,
+    url: config.apiUrl + '/brews/',
     method: 'GET',
     headers: { Authorization: 'Token token=' + store.user.token }
   })
@@ -32,21 +32,21 @@ const getBrew = (brewId) => {
 
 const deleteBrew = (brewId) => {
   return $.ajax({
-    url: config.apiUrl + '/brews/' + brewId,
+    url: config.apiUrl + '/brews',
     method: 'DELETE',
     headers: { Authorization: 'Token token=' + store.user.token }
   })
 }
 
 // Try using formdata?
-const updateBrew = (brewId) => {
+const updateBrew = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/brews/' + brewId,
+    url: config.apiUrl + '/brews',
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
-    // data: formData
+    },
+    data: formData
   })
 }
 

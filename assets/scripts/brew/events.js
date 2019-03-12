@@ -8,9 +8,9 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const addHandlers = () => {
   $('#create-brew-form').on('submit', onCreateBrew)
   $('#update-brew-form').on('submit', onUpdateBrew)
-  $('#delete-brew-form').on('click', onDeleteBrew)
+  $('#delete-brew-form').on('submit', onDeleteBrew)
   $('#get-brew-form').on('submit', onGetBrew)
-  $('#get-brews-button').on('submit', onGetBrews)
+  $('#get-brews-button').on('click', onGetBrews)
 }
 
 const onCreateBrew = (event) => {
@@ -23,12 +23,13 @@ const onCreateBrew = (event) => {
     .catch(ui.failure)
 }
 
-const onGetBrews = (event) => {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
+const onGetBrews = () => {
+  // console.log('showing brews', onGetBrews)
+  // event.preventDefault()
+  // const form = event.target
+  // const formData = getFormFields(form)
 
-  api.getBrews(formData)
+  api.getBrews()
     .then(ui.getBrewsSuccess)
     .catch(ui.failure)
 }
