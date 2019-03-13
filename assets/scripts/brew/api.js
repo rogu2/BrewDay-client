@@ -13,6 +13,15 @@ const createBrew = (formData) => {
   })
 }
 
+const getUserBrews = (formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/user-brews',
+    method: 'GET',
+    headers: { Authorization: 'Token token=' + store.user.token },
+    data: formData
+  })
+}
+
 const getBrews = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/brews',
@@ -51,6 +60,7 @@ module.exports = {
   createBrew,
   getBrews,
   getBrew,
+  getUserBrews,
   deleteBrew,
   updateBrew,
   store,
