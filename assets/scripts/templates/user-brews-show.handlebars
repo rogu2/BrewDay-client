@@ -1,0 +1,46 @@
+
+{{#each brews as |brew|}}
+  {{log 'brew user log'}}
+  {{log brew.user}}
+  <!-- {{> partial}} -->
+
+  <section class="brew" data-id="{{brew.id}}">
+    <h2>
+      <small>Recipe Name:</small> {{limit brew.name 15}}
+    </h2>
+    <p>
+      <small>User:</small>
+      {{#if brew.user.email}}
+        {{brew.user.email}}
+      {{else}}
+        No brewer assigned.
+      {{/if}}
+    </p>
+    <p>
+      <small>Recipe:</small>
+      {{#if brew.recipe}}
+        {{brew.recipe}}
+      {{else}}
+        No recipe provided.
+      {{/if}}
+    </p>
+    <p>
+      <small>Steps:</small>
+      {{#if brew.steps}}
+        {{brew.steps}}
+      {{else}}
+        No steps provided.
+      {{/if}}
+    </p>
+    <p>
+      <small>Notes:</small>
+      {{#if brew.notes}}
+        {{brew.notes}}
+      {{else}}
+        No notes provided.
+      {{/if}}
+    </p>
+    <button type="submit" class="btn btn-danger delete-brew">Remove</button>
+  </section>
+
+{{/each}}
