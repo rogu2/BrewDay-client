@@ -64,6 +64,7 @@ const startBrewUpdate = (event) => {
   event.preventDefault()
   const id = $(event.target).data('id')
   store.updateBrewId = id
+  ui.onStartBrewUpdate()
 }
 
 const onUpdateBrew = (event) => {

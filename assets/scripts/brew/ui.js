@@ -37,6 +37,11 @@ const deleteBrewSuccess = () => {
 const updateBrewSuccess = () => {
   $('#user-feedback').text('Brew has been updated')
   $('form').trigger('reset')
+  store.updateBrewId = null
+}
+
+const onStartBrewUpdate = () => {
+
 }
 
 const failure = () => {
