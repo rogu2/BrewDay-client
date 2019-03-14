@@ -41,7 +41,7 @@ const signOutSuccess = () => {
   $('#sign-up-form').hide()
   $('.auth-toggle').show()
   $('#brew-forms').hide()
-  $('#content').empty()
+  $('#content').text('')
   $('header').hide()
 }
 
@@ -50,6 +50,7 @@ const showPasswordSuccess = () => {
   $('#change-password-button').hide()
   $('#create-brew-form').hide()
   $('#update-brew-form').hide()
+  $('#content').hide()
 }
 
 const changePasswordSuccess = () => {
