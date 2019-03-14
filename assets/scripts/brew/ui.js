@@ -7,6 +7,8 @@ const showUserBrewsTemplate = require('../templates/user-brews-show.handlebars')
 
 const showCreateBrewSuccess = () => {
   $('#create-brew-form').show()
+  $('#update-brew-form').hide()
+  $('#change-password-form').hide()
 }
 
 const createBrewSuccess = () => {
@@ -42,11 +44,14 @@ const deleteBrewSuccess = () => {
 const updateBrewSuccess = () => {
   $('#user-feedback').text('Brew has been updated')
   $('form').trigger('reset')
+  $('#update-brew-form').hide()
   store.updateBrewId = null
 }
 
 const onStartBrewUpdate = () => {
-  $('')
+  $('#update-brew-form').show()
+  $('#create-brew-form').hide()
+  $('#change-password-form').hide()
 }
 
 const failure = () => {

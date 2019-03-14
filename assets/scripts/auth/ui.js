@@ -48,6 +48,8 @@ const signOutSuccess = () => {
 const showPasswordSuccess = () => {
   $('#change-password-form').show()
   $('#change-password-button').hide()
+  $('#create-brew-form').hide()
+  $('#update-brew-form').hide()
 }
 
 const changePasswordSuccess = () => {

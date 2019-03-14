@@ -28,6 +28,30 @@
 
   <h1>It's BrewDay!</h1>
   <p class="notification" id="user-feedback"></p>
+  <section id="brew-forms">
+    <button id="get-my-brews-button">Show my brews</button>
+    <button id="get-brews-button">Show all brews</button>
+    <button id="create-brew-button">New Brew</button>
+    <!-- <button id="update-brew-button">Update Brew</button> -->
+    <form id="create-brew-form">
+      <p>New Brew</p>
+      <input name="brew[name]" type="text" placeholder="brew name">
+      <input name="brew[recipe]" type="text" placeholder="recipe">
+      <input name="brew[steps]" type="text" placeholder="steps">
+      <input name="brew[notes]" type="text" placeholder="notes">
+      <input type="submit">
+    </form>
+
+    <form id="update-brew-form">
+      <p>Change Brew</p>
+      <input name="brew[name]" type="text" placeholder="brew name">
+      <input name="brew[recipe]" type="text" placeholder="recipe">
+      <input name="brew[steps]" type="text" placeholder="steps">
+      <input name="brew[notes]" type="text" placeholder="notes">
+      <input type="submit">
+    </form>
+
+  </section>
   <section class="form">
 
     <ul class="auth-toggle">
@@ -55,42 +79,5 @@
     <div id="content" class="content"></div>
   </main>
 
-  <section id="brew-forms">
-    <button id="get-my-brews-button">Show my brews</button>
-    <button id="get-brews-button">Show all brews</button>
-    <button id="create-brew-button">New Brew</button>
-    <!-- <button id="update-brew-button">Update Brew</button> -->
-    <form id="create-brew-form">
-      <p>New Brew</p>
-      <input name="brew[name]" type="text" placeholder="brew name">
-      <input name="brew[recipe]" type="text" placeholder="recipe">
-      <input name="brew[steps]" type="text" placeholder="steps">
-      <input name="brew[notes]" type="text" placeholder="notes">
-      <input type="submit">
-    </form>
-
-    <form id="update-brew-form">
-      <p>Change Brew</p>
-      <!-- <input name="brew[brew_id]" type="text" placeholder="brew id"> -->
-      <input name="brew[name]" type="text" placeholder="brew name">
-      <input name="brew[recipe]" type="text" placeholder="recipe">
-      <input name="brew[steps]" type="text" placeholder="steps">
-      <input name="brew[notes]" type="text" placeholder="notes">
-      <input type="submit">
-    </form>
-
-    <!-- <form id="delete-brew-form">
-      <p>Delete Brew</p>
-      <input name="brew[brew_id]" type="text" placeholder="brew id">
-      <input type="submit">
-    </form> -->
-
-    <!-- <form id="get-brew-form">
-      <p>Show a Brew</p>
-      <input name="brew[brew_id]" type="text" placeholder="brew id">
-      <input type="submit">
-    </form> -->
-
-  </section>
 </body>
 </html>

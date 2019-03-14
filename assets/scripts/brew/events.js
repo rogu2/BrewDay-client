@@ -31,6 +31,8 @@ const onCreateBrew = (event) => {
 }
 
 const onGetBrews = () => {
+  $('#update-brew-form').hide()
+  $('#create-brew-form').hide()
   api.getBrews()
     .then(ui.getBrewsSuccess)
     .catch(ui.failure)
@@ -61,11 +63,6 @@ const onDeleteBrew = (event) => {
     .catch(ui.failure)
 }
 
-// const onUpdateBrewForm = (event) => {
-//   event.preventDefault()
-//   const
-// }
-
 const startBrewUpdate = (event) => {
   event.preventDefault()
   const id = $(event.target).data('id')
@@ -77,10 +74,10 @@ const onUpdateBrew = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
   formData.brew.id = store.updateBrewId
-  // const formData = $(event.target).data('id')
   console.log('formdata', formData)
   api.updateBrew(formData)
     .then(ui.updateBrewSuccess)
+    .then(() => onGetUserBrews(event))
     .catch(ui.failure)
 }
 
