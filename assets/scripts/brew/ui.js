@@ -9,6 +9,7 @@ const showCreateBrewSuccess = () => {
   $('#create-brew-form').show()
   $('#update-brew-form').hide()
   $('#change-password-form').hide()
+  $('#change-password-button').show()
 }
 
 const createBrewSuccess = () => {
@@ -22,6 +23,8 @@ const getBrewsSuccess = (data) => {
   const showBrewsHtml = showBrewsTemplate({ brews: data.brews })
   $('.content').html(showBrewsHtml)
   store.updateBrewId = null
+  $('#change-password-form').hide()
+  $('#change-password-button').show()
 }
 
 const getBrewSuccess = (data) => {
@@ -35,6 +38,8 @@ const getUserBrewsSuccess = (data) => {
   $('#user-feedback').text('Displaying your brews')
   const showUserBrewsHtml = showUserBrewsTemplate({ brews: data.brews })
   $('#content').html(showUserBrewsHtml)
+  $('#change-password-form').hide()
+  $('#change-password-button').show()
 }
 
 const deleteBrewSuccess = () => {

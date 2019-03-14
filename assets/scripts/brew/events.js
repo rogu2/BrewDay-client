@@ -27,6 +27,7 @@ const onCreateBrew = (event) => {
 
   api.createBrew(formData)
     .then(ui.createBrewSuccess)
+    .then(() => onGetUserBrews(event))
     .catch(ui.failure)
 }
 

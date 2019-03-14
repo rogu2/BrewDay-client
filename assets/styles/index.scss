@@ -11,20 +11,19 @@ body {
   padding: 5rem 0 1rem;
 }
 
+input {
+  background-color: $silver;
+  border-radius: 20px;
+}
+
 form {
   background: lighten($slate, 25%);
   border-radius: 4px;
-  box-shadow: 0 4px 10px 4px lighten($grey, 25%);
+  // box-shadow: 0 4px 10px 4px lighten($grey, 25%);
+  box-shadow: 0 4px 10px 4px $grey;
   margin: 40px auto;
   max-width: 600px;
   padding: 40px;
-
-  // .toggle {
-  //   a {
-  //     background: $yellow;
-  //     color: $silver;
-  //   }
-  // }
 }
 
 header {
@@ -82,14 +81,14 @@ main {
     &:empty {
       &::before {
         color: lighten($yellow, 2%);
-        // content: 'Welcome to BrewDay';
         font-size: 10vh;
-        line-height: 0.85;
+        line-height: .85;
         text-align: center;
         width: 100%;
-        &:hover {
-          background: $grey;
-        }
+      }
+
+      &:hover {
+        background: $grey;
       }
     }
 
@@ -117,8 +116,6 @@ ul {
   display: flex;
   justify-content: center;
 }
-
-// .auth {}
 
 .auth-toggle {
   list-style: none;
