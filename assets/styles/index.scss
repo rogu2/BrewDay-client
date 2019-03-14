@@ -1,9 +1,155 @@
 @import '~bootstrap/scss/bootstrap';
-
 // colors //
-/*
-yellow: #feda6a
-silver: #d4d4dc
-grey: #393f4d
-slate: #1d1e22
-*/
+$yellow: #feda6a;
+$silver: #d4d4dc;
+$grey: #393f4d;
+$slate: #1d1e22;
+// styles //
+body {
+  background: lighten($slate, 5%);
+  min-height: 100vh;
+  padding: 5rem 0 1rem;
+}
+
+form {
+  background: lighten($slate, 25%);
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px lighten($grey, 25%);
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 40px;
+
+  // .toggle {
+  //   a {
+  //     background: $yellow;
+  //     color: $silver;
+  //   }
+  // }
+}
+
+header {
+  display: flex;
+  justify-content: right;
+}
+
+h1 {
+  color: $silver;
+  text-align: center;
+}
+
+h3 {
+  color: $silver;
+  font-weight: 4px;
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+main {
+  @include make-container;
+  @include make-container-max-widths;
+
+  .brew {
+    @include make-col-ready;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+    }
+    background: $silver;
+    border-bottom: 1px solid;
+    border-radius: 4px;
+    border-right: 1px solid;
+    cursor: default;
+    outline: none;
+    padding: 1rem;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    small {
+      color: $grey;
+      display: block;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+  }
+
+  .content {
+    @include make-row;
+
+    &:empty {
+      &::before {
+        color: lighten($yellow, 2%);
+        // content: 'Welcome to BrewDay';
+        font-size: 10vh;
+        line-height: 0.85;
+        text-align: center;
+        width: 100%;
+        &:hover {
+          background: $grey;
+        }
+      }
+    }
+
+    &:not(:empty) {
+      border-left: 1px solid;
+      border-top: 1px solid;
+    }
+  }
+}
+
+nav {
+  @extend .navbar;
+  @extend .navbar-dark;
+  @extend .bg-dark;
+  @extend .fixed-top;
+
+  .app-name {
+    @extend .navbar-brand;
+    @extend .h1;
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+
+// .auth {}
+
+.auth-toggle {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  li a {
+    background: $slate;
+    color: $silver;
+    cursor: default;
+    display: block;
+    font-size: 20px;
+    padding: 25px;
+    text-align: center;
+    text-decoration: none;
+    transition: .4s ease;
+    width: 300px;
+
+    &:hover {
+      background: $grey;
+      color: lighten($yellow, 2%);
+    }
+  }
+}
+
+.notification {
+  color: lighten($yellow, 2%);
+}
