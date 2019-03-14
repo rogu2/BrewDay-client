@@ -5,9 +5,14 @@ const config = require('../config.js')
 const showBrewsTemplate = require('../templates/brew-index.handlebars')
 const showUserBrewsTemplate = require('../templates/user-brews-show.handlebars')
 
+const showCreateBrewSuccess = () => {
+  $('#create-brew-form').show()
+}
+
 const createBrewSuccess = () => {
   $('#user-feedback').text('New brew has been created')
   $('form').trigger('reset')
+  $('#create-brew-form').hide()
 }
 
 const getBrewsSuccess = (data) => {
@@ -41,7 +46,7 @@ const updateBrewSuccess = () => {
 }
 
 const onStartBrewUpdate = () => {
-
+  $('')
 }
 
 const failure = () => {
@@ -51,11 +56,13 @@ const failure = () => {
 
 module.exports = {
   createBrewSuccess,
+  showCreateBrewSuccess,
   getBrewsSuccess,
   getBrewSuccess,
   getUserBrewsSuccess,
   deleteBrewSuccess,
   updateBrewSuccess,
+  onStartBrewUpdate,
   failure,
   store,
   config

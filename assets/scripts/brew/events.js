@@ -6,6 +6,7 @@ const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const addHandlers = () => {
+  $('#create-brew-button').on('click', onShowCreateBrew)
   $('#create-brew-form').on('submit', onCreateBrew)
   $('#update-brew-form').on('submit', onUpdateBrew)
   $('.content').on('click', '.update-brew', startBrewUpdate)
@@ -13,6 +14,11 @@ const addHandlers = () => {
   $('#get-brew-form').on('submit', onGetBrew)
   $('#get-brews-button').on('click', onGetBrews)
   $('#get-my-brews-button').on('click', onGetUserBrews)
+}
+
+const onShowCreateBrew = (event) => {
+  event.preventDefault()
+  ui.showCreateBrewSuccess()
 }
 
 const onCreateBrew = (event) => {

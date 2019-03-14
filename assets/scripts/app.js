@@ -10,6 +10,8 @@ $(() => {
   $('#brew-forms').hide()
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
+  $('#create-brew-form').hide()
+  $('#update-brew-form').hide()
   authEvents.addHandlers()
   brewEvents.addHandlers()
 })
