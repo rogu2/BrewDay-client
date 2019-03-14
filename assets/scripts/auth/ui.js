@@ -41,7 +41,7 @@ const signOutSuccess = () => {
   $('#sign-up-form').hide()
   $('.auth-toggle').show()
   $('#brew-forms').hide()
-  $('#content').hide()
+  $('#content').empty()
   $('header').hide()
 }
 
@@ -62,6 +62,8 @@ const changePasswordSuccess = () => {
 const changePasswordFailure = () => {
   $('#user-feedback').text('Password did not update, please try again')
   $('form').trigger('reset')
+  $('form').hide()
+  $('#change-password-button').show()
 }
 
 const failure = () => {

@@ -1,12 +1,9 @@
 
 {{#each brews as |brew|}}
-  <!-- {{log 'brew user log'}}
-  {{log brew.user}} -->
-  <!-- {{> partial}} -->
 
   <section class="brew" data-id="{{brew.id}}">
     <h2>
-      <small>Recipe Name:</small> {{limit brew.name 15}}
+      <small>Recipe Name:</small> {{limit brew.name 35}}
     </h2>
     <p>
       <small>User:</small>

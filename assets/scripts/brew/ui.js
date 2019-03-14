@@ -32,6 +32,7 @@ const getBrewSuccess = (data) => {
 }
 
 const getUserBrewsSuccess = (data) => {
+  $('#user-feedback').text('Displaying your brews')
   const showUserBrewsHtml = showUserBrewsTemplate({ brews: data.brews })
   $('#content').html(showUserBrewsHtml)
 }
