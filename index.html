@@ -14,24 +14,8 @@
 </head>
 
 <body>
-  <h1>It's BrewDay!</h1>
-  <section>
-    <p id="user-feedback"></p>
-    <form id="sign-up-form">
-      <p>Sign Up</p>
-      <input name="credentials[email]" type="text" placeholder="email">
-      <input name="credentials[password]" type="password" placeholder="password">
-      <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-      <input type="submit">
-    </form>
-
-    <form id="sign-in-form">
-      <p>Sign In</p>
-      <input name="credentials[email]" type="text" placeholder="email">
-      <input name="credentials[password]" type="password" placeholder="password">
-      <input type="submit">
-    </form>
-
+  <header>
+    <button id="change-password-button">Change Password</button>
     <form id="change-password-form">
       <p>Change Password</p>
       <input name="passwords[old]" type="password" placeholder="old password">
@@ -40,8 +24,40 @@
     </form>
 
     <button id="sign-out-button">Sign Out</button>
+  </header>
+
+  <h1>It's BrewDay!</h1>
+  <p class="notification" id="user-feedback"></p>
+  <section class="form">
+
+    <ul class="auth-toggle">
+      <li id="sign-up-toggle" class="auth toggle"><a href="#sign-up-form">Sign Up</a></li>
+      <li id="sign-in-toggle" class="auth"><a href="#sign-in-form">Sign In</a></li>
+    </ul>
+
+    <form id="sign-up-form">
+      <h3>Sign Up</h3>
+      <input name="credentials[email]" type="text" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+      <input type="submit">
+    </form>
+
+    <form id="sign-in-form">
+      <h3>Sign In</h3>
+      <input name="credentials[email]" type="text" placeholder="email">
+      <input name="credentials[password]" type="password" placeholder="password">
+      <input type="submit">
+    </form>
   </section>
+
+  <main>
+    <div id="content" class="content"></div>
+  </main>
+
   <section id="brew-forms">
+    <button id="get-my-brews-button">Show my brews</button>
+    <button id="get-brews-button">Show all brews</button>
     <form id="create-brew-form">
       <p>New Brew</p>
       <input name="brew[name]" type="text" placeholder="brew name">
@@ -53,7 +69,7 @@
 
     <form id="update-brew-form">
       <p>Change Brew</p>
-      <input name="brew[brew_id]" type="text" placeholder="brew id">
+      <!-- <input name="brew[brew_id]" type="text" placeholder="brew id"> -->
       <input name="brew[name]" type="text" placeholder="brew name">
       <input name="brew[recipe]" type="text" placeholder="recipe">
       <input name="brew[steps]" type="text" placeholder="steps">
@@ -61,19 +77,18 @@
       <input type="submit">
     </form>
 
-    <form id="delete-brew-form">
+    <!-- <form id="delete-brew-form">
       <p>Delete Brew</p>
       <input name="brew[brew_id]" type="text" placeholder="brew id">
       <input type="submit">
-    </form>
+    </form> -->
 
-    <form id="get-brew-form">
+    <!-- <form id="get-brew-form">
       <p>Show a Brew</p>
       <input name="brew[brew_id]" type="text" placeholder="brew id">
       <input type="submit">
-    </form>
+    </form> -->
 
-    <button id="get-brews-button">Show all brews</button>
   </section>
 </body>
 </html>

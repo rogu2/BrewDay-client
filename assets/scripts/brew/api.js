@@ -34,14 +34,15 @@ const getBrew = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/brews/' + formData.brew.brew_id,
     method: 'GET',
-    headers: { Authorization: 'Token token=' + store.user.token }
+    headers: { Authorization: 'Token token=' + store.user.token },
+    data: formData
   })
 }
 
 const deleteBrew = (formData) => {
   console.log('deletebrew', formData)
   return $.ajax({
-    url: config.apiUrl + '/brews/' + formData.brew.brew_id,
+    url: config.apiUrl + '/brews/' + formData,
     method: 'DELETE',
     headers: { Authorization: 'Token token=' + store.user.token }
   })
@@ -49,7 +50,7 @@ const deleteBrew = (formData) => {
 
 const updateBrew = (formData) => {
   return $.ajax({
-    url: config.apiUrl + '/brews/' + formData.brew.brew_id,
+    url: config.apiUrl + '/brews/' + formData.brew.id,
     method: 'PATCH',
     headers: { Authorization: 'Token token=' + store.user.token },
     data: formData

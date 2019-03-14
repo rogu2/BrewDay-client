@@ -14,6 +14,7 @@ const getBrewsSuccess = (data) => {
   $('#user-feedback').text('Displaying all brews')
   const showBrewsHtml = showBrewsTemplate({ brews: data.brews })
   $('.content').html(showBrewsHtml)
+  store.updateBrewId = null
 }
 
 const getBrewSuccess = (data) => {

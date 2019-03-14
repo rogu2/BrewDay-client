@@ -1,7 +1,7 @@
 
 {{#each brews as |brew|}}
-  {{log 'brew user log'}}
-  {{log brew.user}}
+  <!-- {{log 'brew user log'}}
+  {{log brew.user}} -->
   <!-- {{> partial}} -->
 
   <section class="brew" data-id="{{brew.id}}">
@@ -40,7 +40,8 @@
         No notes provided.
       {{/if}}
     </p>
-    <button type="submit" class="btn btn-danger delete-brew">Remove</button>
+    <button data-id={{brew.id}} type="submit" class="btn btn-danger delete-brew">Remove</button>
+    <button data-id={{brew.id}} type="submit" class="btn btn-primary update-brew">Update</button>
   </section>
 
 {{/each}}
