@@ -75,7 +75,6 @@ const onUpdateBrew = (event) => {
   event.preventDefault()
   const formData = getFormFields(event.target)
   formData.brew.id = store.updateBrewId
-  console.log('formdata', formData)
   api.updateBrew(formData)
     .then(ui.updateBrewSuccess)
     .then(() => onGetUserBrews(event))

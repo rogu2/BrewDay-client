@@ -40,7 +40,6 @@ const getBrew = (formData) => {
 }
 
 const deleteBrew = (formData) => {
-  console.log('deletebrew', formData)
   return $.ajax({
     url: config.apiUrl + '/brews/' + formData,
     method: 'DELETE',

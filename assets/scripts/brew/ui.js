@@ -35,7 +35,7 @@ const getBrewSuccess = (data) => {
 }
 
 const getUserBrewsSuccess = (data) => {
-  $('#user-feedback').text('Displaying your brews')
+  $('#user-feedback').text('Showing brews. If no brews display, please first create a brew')
   const showUserBrewsHtml = showUserBrewsTemplate({ brews: data.brews })
   $('#content').html(showUserBrewsHtml)
   $('#change-password-form').hide()
