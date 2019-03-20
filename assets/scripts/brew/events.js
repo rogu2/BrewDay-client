@@ -13,7 +13,13 @@ const addHandlers = () => {
   $('.content').on('click', '.delete-brew', onDeleteBrew)
   $('#get-brew-form').on('submit', onGetBrew)
   $('#get-brews-button').on('click', onGetBrews)
-  $('#get-my-brews-button').on('click', onGetUserBrews)
+  $('#get-my-brews-button').on('click', startGetUserBrews)
+}
+
+const startGetUserBrews = (event) => {
+  event.preventDefault()
+  ui.showUserBrewsSuccess()
+  onGetUserBrews(event)
 }
 
 const onShowCreateBrew = (event) => {
@@ -60,6 +66,8 @@ const onDeleteBrew = (event) => {
   event.preventDefault()
   const formData = $(event.target).data('id')
   api.deleteBrew(formData)
+    .then(ui.deleteBrewSuccess)
+    // .then(() => onDisplayUserBrews(event))
     .then(() => onGetUserBrews(event))
     .catch(ui.failure)
 }
@@ -91,5 +99,6 @@ module.exports = {
   store,
   config,
   startBrewUpdate,
+  startGetUserBrews,
   addHandlers
 }

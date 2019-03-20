@@ -18,6 +18,10 @@ const createBrewSuccess = () => {
   $('#create-brew-form').hide()
 }
 
+const showUserBrewsSuccess = () => {
+  $('#user-feedback').text('Showing brews. If no brews display, please first create a brew')
+}
+
 const getBrewsSuccess = (data) => {
   $('#user-feedback').text('Displaying all brews')
   const showBrewsHtml = showBrewsTemplate({ brews: data.brews })
@@ -35,7 +39,6 @@ const getBrewSuccess = (data) => {
 }
 
 const getUserBrewsSuccess = (data) => {
-  $('#user-feedback').text('Showing brews. If no brews display, please first create a brew')
   const showUserBrewsHtml = showUserBrewsTemplate({ brews: data.brews })
   $('#content').html(showUserBrewsHtml)
   $('#change-password-form').hide()
@@ -74,6 +77,7 @@ module.exports = {
   deleteBrewSuccess,
   updateBrewSuccess,
   onStartBrewUpdate,
+  showUserBrewsSuccess,
   failure,
   store,
   config
